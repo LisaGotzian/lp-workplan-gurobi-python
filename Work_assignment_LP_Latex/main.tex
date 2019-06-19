@@ -1,0 +1,25 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\usepackage{mathtools, amsmath, amssymb, amstext, amsfonts, mathrsfs}
+\usepackage{colortbl}
+
+\usepackage{tikz}
+\usetikzlibrary{fit,positioning}
+
+\newcommand{\comm}[1]{}
+\newcommand{\truck}[2]{#1^{(\text{\tiny{v}})}#2}
+
+\newcommand{\reduced}[4][0]{\overline{c_{#2}} = #3 &= #4 &\text{\footnotesize{\textbf{#1}}}} % This command takes four parameters, the first parameter is set to 0 by default. It is used to ease the entering of the reduced costs.
+
+\title{Work Assignment Linear Programming}
+\author{Lisa Gotzian}
+\date{June 13, 2019}
+
+\begin{document}
+
+\maketitle
+
+\input{model.tex}
+
+\end{document}

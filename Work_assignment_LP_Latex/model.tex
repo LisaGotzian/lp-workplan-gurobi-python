@@ -1,0 +1,39 @@
+\section*{Task}
+
+10 people will be assigned to working on 23 projects over the course of 42 months.
+
+In the initial definition of the problem, it is defined how much a person should work on a project in full time equivalents (FTE). 
+
+\section*{Model}
+
+\begin{align*}
+    \textbf{Index Sets:}\quad\\
+    \text{Set of Projects:}\quad & J \\
+    \text{Set of People:}\quad & P \\
+    \text{Set of Months:}\quad & M \\
+    \\
+    %
+    \textbf{Constants:}\quad \\
+    \text{Fixed work pP per project:}\quad & fix_{jp} \quad & \forall j,p \in J,P\\
+    \text{Capacity pP per month:}\quad & cap_{pm} \quad & \forall p,m \in P,M\\
+    \\
+    %
+    \textbf{Decision Variables:}\quad \\
+    \text{Working Time:}\quad & x_{jpm} \quad & \forall j \in J, \forall p \in P, \forall m \in M\\
+    \text{Soft constraint \textit{capacity}:}\quad & zcap_{pm} \quad & \forall p \in P, \forall m \in M\\
+    \text{Soft constraint \textit{"should"/soll}:}\quad & zsoll_{jp} \quad & \forall j \in J, \forall p \in P\\
+\end{align*}
+
+\begin{align*}
+    min &\sum_p (\sum_m zcap_{pm} + \sum_j zsoll_{jp}) && \\
+    s.t. &&&\\
+    &\sum_{j} x_{jpm} &\leq cap_{pm} \quad &\forall  p,m \quad \text{working time pP \& month not above their capacity}\\
+    &\sum_{j} x_{jpm} + zcap_{pm}&= cap_{pm} \quad &\forall  p,m \quad \text{though with soft constraint}\\
+\\
+    &\sum_m x_{jpm} + zsoll_{jp} &= fix_{jp} \quad  &\forall j,p \quad \text{working time assigned to project pP w/ soft constr.}\\
+   & x_{jpm} &\leq y_{jpm} \quad &\forall  j,p,m \quad\text{activation in case of no contract for month m}\\ 
+    &x_{jpm} &\geq 0 \quad &\text{Non-negativity constraint}
+\end{align*}
+
+\vspace{2cm}
+\noindent\textit{Thanks to Henning Feller for your help and your initiative in starting this properly in Latex!}
