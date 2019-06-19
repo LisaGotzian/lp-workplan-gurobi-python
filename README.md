@@ -1,9 +1,9 @@
 # Planning workforce with gurobi in python
 
-A linear programming approach to determine optimal working hours in *Full-time equivalents (FTEs)* using **Gurobi** in python: `Work_assignment_LP.ipynb`.   
+A linear programming approach to determine optimal working hours in *Full-time equivalents (FTEs)* using **Gurobi** in python: `work_assignment_LP.ipynb`.   
 The data `ressourcenplan.csv` (German csv) consists of **10 people** and **23 projects** over the course of **42 months**. Column "0" is projects, column "0.1" is people (or rather their job descriptions). Column "0.2" is the **total number of FTEs** over the course of the 42 months that the person will have spent in that project. This column is given as part of the problem and the goal of this script is to match this column while also keeping everyone's **capacity** in mind.  
 The solution becomes only feasible when two soft constraints, *zcap* for capacity and *zsoll* for the fixed project pP allocation, were introduced.  
-`Work_assignment_LP.ipynb` also offers a possibility to save gurobi variables in a dataframe and creates a few visualizations of the results.
+`work_assignment_LP.ipynb` also offers a possibility to save gurobi variables in a dataframe and creates a few visualizations of the results.
 
 ## The mathematical model
 The mathematical model, described in `Work_assignment_LP.pdf`:  
@@ -12,7 +12,7 @@ The mathematical model, described in `Work_assignment_LP.pdf`:
 ![image](Work_assignment_LP_Latex/mathematical_model_for_readme.png)
 
 ## Getting started
-To run `Work_assignment_LP.ipynb` on your own, you need:
+To run `work_assignment_LP.ipynb` on your own, you need:
 - a jupyter notebook environment from conda
 - `ressourcenplan.csv`, the main framework
 - `capacity.csv`, the capacity constraints pP and month
